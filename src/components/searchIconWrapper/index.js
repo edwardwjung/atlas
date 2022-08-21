@@ -1,5 +1,4 @@
-import React from "react";
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({

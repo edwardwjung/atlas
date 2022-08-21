@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import React from "react";
-import Link from "../../../node_modules/@mui/material/Link/Link";
 
 const AtlasCardFooter = (data) => {
   const link = `/detail?id=${data.data}`;

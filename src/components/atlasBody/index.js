@@ -1,4 +1,3 @@
-import { AlignHorizontalCenter } from "@mui/icons-material";
 import React from "react";
 import {AtlasBodyHeader, AtlasBodyContent, AtlasBodyTags} from "../../components";
 
