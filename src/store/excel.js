@@ -1,20 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Papa from "papaparse";
+import { DataCsvUrl } from "../constant";
 
 const slice = createSlice({
   name: "excel",
   initialState: {
     data: {},
+    currentSelectedData:{},
+    searchInput:''
   },
   reducers: {
     dataFetch: (state, action) => {
-      // console.log(action.payload.data);
       state.data = action.payload.data;
     },
+    setData:(state,action)=>{
+      state.currentSelectedData = action.payload.data;
+    },
+    setSearch:(state,action)=>{
+      state.searchInput = action.payload;
+    }
   },
 });
 
-const { dataFetch } = slice.actions;
+const { dataFetch, setData,setSearch } = slice.actions;
 
 const parseFile = (file) => {
   return new Promise((resolve, reject) => {
@@ -34,11 +42,19 @@ const parseFile = (file) => {
 
 export const dataFetchFn = () => async (dispatch) => {
   try {
-    const data = await parseFile('https://raw.githubusercontent.com/taecoding/taecoding.github.io/master/data/titanic/test.csv');
+    const data = await parseFile(DataCsvUrl);
     dispatch(dataFetch(data));
   } catch (e) {
     console.log("error", e);
   }
 };
+
+export const selectedDataForDetail = (data)=>(dispatch)=>{
+  dispatch(setData(data));
+}
+
+export const onSearchInput = (data)=>(dispatch)=>{
+  dispatch(setSearch(data));
+}
 
 export default slice.reducer; // export all the reducers in the particular slice
