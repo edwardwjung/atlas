@@ -21,6 +21,7 @@ const Detail = () => {
     <React.Fragment>
       <Navbar title={detail.Name} />
       <Box>
+        
         <Grid container>
           <Grid item xs={12} sm={6}>
             <Box
@@ -42,17 +43,16 @@ const Detail = () => {
               style={{
                 paddingTop: "30px",
                 paddingRight: "30px",
-                
               }}
             >
               <Card
                 style={{
-                  minHeight: "400px",
-                  height: "100%",
+                  height: "400px",
                 }}
               >
                 <CardContent>
                   <DescriptionCard
+                    
                     header="Description:"
                     content={detail.Description}
                     text={detail.Labels}

@@ -28,7 +28,7 @@ const Navbar = (props) => {
               variant="h6"
               noWrap
               component="div"
-              style={{ textAlign: "left", marginLeft: 10 }}
+              style={{ textTransform:'capitalize', textAlign: "left", marginLeft: 10 }}
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
               {props.title}
