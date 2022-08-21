@@ -30,7 +30,7 @@ const Dashboard = () => {
 
   return (
     <React.Fragment>
-      <Navbar title="Atlas" showSearch />
+      <Navbar title="Atlas CAIDM" showSearch />
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
