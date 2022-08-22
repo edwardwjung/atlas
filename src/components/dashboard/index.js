@@ -12,10 +12,10 @@ const Dashboard = () => {
       return dataArr;
     }
     return dataArr.filter((e)=>{
-        if(e.Name.includes(searchInput)){
+        if(e.Name.toLowerCase().includes(searchInput.toLowerCase())){
           return e;
         }
-        if(e.Labels.includes(searchInput)){
+        if(e.Labels.toLowerCase().includes(searchInput.toLowerCase())){
           return e;
         }
         return false;
