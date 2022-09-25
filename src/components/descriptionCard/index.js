@@ -5,8 +5,8 @@ const DescriptionCard = (props) => {
   return (
     <React.Fragment>
       <h2 style={{marginTop:'-5px', textAlign: 'left'}}>{props.header}</h2>
-      <p style={{textAlign: 'left'}}>{props.content}</p>
-      {props.text && <AtlasBodyTags text={props.text} />}
+      <p style={{textAlign: 'left'}}>{props.content && props.content} {!props.content && "N/A"}</p>
+      { props.text && <AtlasBodyTags text={props.text} /> }
     </React.Fragment>
   );
 };
